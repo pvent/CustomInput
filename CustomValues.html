@@ -1,0 +1,106 @@
+<!-- saved from url=(0014)about:internet -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Custom User Input Form</title>
+    <link rel="stylesheet" type="text/css" href="FormStyle1.css">
+</head>
+
+<body style="background-color: #333; color: #fff;"> <!-- Apply dark mode styles to the entire body -->
+<img class="logo" src="UiPathLogo.svg" alt="UiPath Logo">
+<div class="form-style">
+    <div class="form-style-heading">Custom User Input Form</div>
+    <form id="controlPanelForm" action="" method="post">
+        <label for="entity">
+            <span>Entity</span>
+            <select id="entity" onchange="updateOperations();" class="select-field">
+                <option value="">Select</option> <!-- Added empty option --><!-- Gennerated values will follow this part -->%options%
+			</select>
+        </label>
+        
+        <label for="operation">
+            <span>Operation</span>
+            <select id="operation" class="select-field"></select>
+        </label>
+
+        <div class="buttons">
+            <input type="submit" value="Execute" id="submitButton" onclick="submitValues(this)" />
+        </div>
+    </form>
+</div> 
+
+<script type="text/javascript">
+/**
+ * @param {HTMLCollection} collection
+ * @param {string} value
+ * @returns {HTMLElement}
+ */
+function findElementByValue(collection, value) {
+    'use strict';
+    for (var i = 0; i < collection.length; ++i) {
+        if (collection[i].value === value) {
+            return collection[i];
+        }
+    }
+}
+
+function selectOperationSelectedBefore() {
+    'use strict';
+    /** @type {string} */
+    var selectedOptionValue = 'get';
+    if (selectedOptionValue[0] !== '_') {
+        /** @type {HTMLCollection} */
+        var operationOptions = document.getElementById('operation').children;
+        /** @type {HTMLElement} */
+        var selectedOption = findElementByValue(operationOptions, selectedOptionValue);
+        selectedOption.setAttribute('selected', 'selected');
+    }
+}
+
+
+/**
+ * @param {HTMLElement} elem
+ * @returns {boolean}
+ */
+function submitValues(elem) {
+    'use strict';
+
+    /** @type {{action: string, entity: string, operation: string}} */
+    var jsonObject = {};
+    /** @type {string} */
+    var formData;
+
+    jsonObject.action = elem.id.replace('Button', '');
+    jsonObject.entity = document.getElementById('entity').value;
+    jsonObject.operation = document.getElementById('operation').value;
+
+    // Get JSON representation of dictionary
+    formData = JSON.stringify(jsonObject);
+
+    // noinspection JSDeprecatedSymbols,JSUnresolvedFunction
+    window.external.setResult(formData);
+    return true;
+}
+
+function updateOperations() {
+    'use strict';
+
+    /** @type {string} */
+    var selectedEntity = document.getElementById('entity').value;
+    /** @type {HTMLElement} */
+    var operationElement = document.getElementById('operation');
+
+    switch (selectedEntity) { //generated values loaded below
+	%cases%
+        default:
+            operationElement.innerHTML = ''; // Default case: empty operation dropdown
+            break;
+    }
+}
+</script>
+
+</body>
+</html>

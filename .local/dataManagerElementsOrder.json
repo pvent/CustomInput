@@ -1,0 +1,45 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Test.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "panelOutput&Sequence_1",
+        "strHtml&Sequence_1",
+        "strCases&Sequence_1",
+        "arrItems&Sequence_1",
+        "strOptionValues&Sequence_1",
+        "arrCases&Sequence_1",
+        "listCases&Sequence_1",
+        "strOptionsHtml&Sequence_1",
+        "strCaseNr&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Config&Sequence_1",
+        "AuthenticationSuccessful&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Language",
+        "in_ConfigFilePath",
+        "in_DisableServerCertificateValidation"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}

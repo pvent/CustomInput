@@ -1,0 +1,140 @@
+<style type="text/css">
+@font-face {
+  font-family: MyHelvetica;
+  src: local("Helvetica Neue Bold"),
+       local("HelveticaNeue-Bold"),
+       url(MgOpenModernaBold.ttf);
+  font-weight: bold;
+}
+.form-style{
+    font-family: Helvetica, Arial, sans-serif;
+    color: #fff; /* Text color set to white */
+    background-color: #333; /* Dark background color */
+}
+.form-style-heading{
+    font-weight: bold;
+    margin-bottom: 4%;
+    margin-top: 4%;
+    font-size: 40px;
+    text-align: center;
+    color: #FA4616; /* Header text color */
+}
+.form-style label{
+    display: block;    
+    text-align: center;
+    margin: 0px 0px 15px 0px;
+    color: #FA4616; /* Label text color */
+}
+.form-style label > span{
+    width: 25%;
+    font-weight: bold;
+    padding-top: 8px;
+    padding-right: 15px;
+    display: inline-block;
+    text-align: right;
+    vertical-align: top;
+    color: #FA4616; /* Span text color */
+}
+.form-style span.required{
+    color:red;
+}
+.form-style input.input-field, .form-style .select-field{
+    width: 50%;    
+}
+.form-style input.input-field, 
+ .form-style .select-field{
+    box-sizing: border-box;
+    border: 1px solid #FA4616; /* Border color */
+    border-radius: 3px;
+    padding: 7px;
+    color: #fff; /* Input text color */
+    background-color: #555; /* Input background color */
+}
+.form-style .input-field:focus, 
+.form-style .select-field:focus{
+    border: 1px solid #0C0;
+}
+.form-style input[type=submit],
+.form-style input[type=button]{
+    border: none;
+    padding: 8px;
+    background: #FA4616;
+    color: #fff;
+    box-shadow: 1px 1px 4px #DADADA;
+    border-radius: 3px;
+    display: inline-block;
+    text-align: center;
+    width: 35%;
+}
+
+#openWorkbookButton {
+    width: 50%;
+}
+
+.form-style input[type=submit]:hover,
+.form-style input[type=button]:hover{
+    background: #EA7B00;
+    color: #fff;
+}
+
+.orchestratorType, .windowsCredentialManagerOptions {
+    text-align: center;
+}
+
+.orchestratorType label, .windowsCredentialManagerOptions label {
+    display: inline-block;
+    padding: 5px 10px 5px 10px;
+}
+
+.orchestratorType input[type=radio], .windowsCredentialManagerOptions input[type=checkbox]{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+#cloudOrchestratorOptions, #saveCloudCredential{
+    display: none;
+}
+
+.buttons{
+    text-align: center;
+    margin: 3%;
+}
+
+.logo {
+  padding: 20px;
+  display: block;
+  margin: 0 auto;
+  width: 30%;
+}
+
+.form-style p{
+    padding-top: 8px;
+    padding-right: 15px;
+    vertical-align: top;
+    text-align: center;
+}
+
+.form-style span.accountLockoutWarning{
+    font-size: 12px;
+    display: block;
+    text-align: center;
+}
+
+/* Dropdown options */
+.form-style select option {
+    background-color: #444; /* Darker background color */
+    color: #fff; /* White text color */
+}
+
+/* Hover state for dropdown options */
+.form-style select option:hover {
+    background-color: #555; /* Slightly darker background color on hover */
+}
+
+/* Selected option in dropdown */
+.form-style select {
+    color: #fff; /* Selected option text color */
+    background-color: #555; /* Selected option background color */
+}
+</style>

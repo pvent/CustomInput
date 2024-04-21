@@ -1,0 +1,146 @@
+<!-- saved from url=(0014)about:internet -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Custom User Input Form</title>
+    <link rel="stylesheet" type="text/css" href="FormStyle1.css">
+</head>
+
+<body style="background-color: #333; color: #fff;"> <!-- Apply dark mode styles to the entire body -->
+<img class="logo" src="UiPathLogo.svg" alt="UiPath Logo">
+<div class="form-style">
+    <div class="form-style-heading">Custom User Input Form</div>
+    <form id="controlPanelForm" action="" method="post">
+        <label for="entity">
+            <span>Entity</span>
+            <select id="entity" onchange="updateOperations();" class="select-field">
+                <option value="">Select</option> <!-- Added empty option --><!-- Gennerated values will follow this part -->
+                <option id="00Option" value="00">00</Option>
+                <option id="01Option" value="01">01</Option>
+                <option id="02Option" value="02">02</Option>
+                <option id="03Option" value="03">03</Option>
+                <option id="04Option" value="04">04</Option>
+                <option id="05Option" value="05">05</Option>
+                <option id="06Option" value="06">06</Option>
+                <option id="07Option" value="07">07</Option>
+                <option id="08Option" value="08">08</Option>
+                <option id="09Option" value="09">09</Option>
+			</select>
+        </label>
+        
+        <label for="operation">
+            <span>Operation</span>
+            <select id="operation" class="select-field"></select>
+        </label>
+
+        <div class="buttons">
+            <input type="submit" value="Execute" id="submitButton" onclick="submitValues(this)" />
+        </div>
+    </form>
+</div> 
+
+<script type="text/javascript">
+/**
+ * @param {HTMLCollection} collection
+ * @param {string} value
+ * @returns {HTMLElement}
+ */
+function findElementByValue(collection, value) {
+    'use strict';
+    for (var i = 0; i < collection.length; ++i) {
+        if (collection[i].value === value) {
+            return collection[i];
+        }
+    }
+}
+
+function selectOperationSelectedBefore() {
+    'use strict';
+    /** @type {string} */
+    var selectedOptionValue = 'get';
+    if (selectedOptionValue[0] !== '_') {
+        /** @type {HTMLCollection} */
+        var operationOptions = document.getElementById('operation').children;
+        /** @type {HTMLElement} */
+        var selectedOption = findElementByValue(operationOptions, selectedOptionValue);
+        selectedOption.setAttribute('selected', 'selected');
+    }
+}
+
+
+/**
+ * @param {HTMLElement} elem
+ * @returns {boolean}
+ */
+function submitValues(elem) {
+    'use strict';
+
+    /** @type {{action: string, entity: string, operation: string}} */
+    var jsonObject = {};
+    /** @type {string} */
+    var formData;
+
+    jsonObject.action = elem.id.replace('Button', '');
+    jsonObject.entity = document.getElementById('entity').value;
+    jsonObject.operation = document.getElementById('operation').value;
+
+    // Get JSON representation of dictionary
+    formData = JSON.stringify(jsonObject);
+
+    // noinspection JSDeprecatedSymbols,JSUnresolvedFunction
+    window.external.setResult(formData);
+    return true;
+}
+
+function updateOperations() {
+    'use strict';
+
+    /** @type {string} */
+    var selectedEntity = document.getElementById('entity').value;
+    /** @type {HTMLElement} */
+    var operationElement = document.getElementById('operation');
+
+    switch (selectedEntity) { //generated values loaded below
+	        case '00':
+            operationElement.innerHTML = '<option value="00_tJZg0jPcFk">00_tJZg0jPcFk</option><option value="00_S3gr0VYqLR">00_S3gr0VYqLR</option>';
+            break;
+        case '01':
+            operationElement.innerHTML = '<option value="01_pYW9kFgONt">01_pYW9kFgONt</option><option value="01_l7u6FVq28K">01_l7u6FVq28K</option>';
+            break;
+        case '02':
+            operationElement.innerHTML = '<option value="02_7yXKvF4n3t">02_7yXKvF4n3t</option><option value="02_4N6JZaW9lz">02_4N6JZaW9lz</option>';
+            break;
+        case '03':
+            operationElement.innerHTML = '<option value="03_h8Le0N2WuP">03_h8Le0N2WuP</option><option value="03_H3IgPjDl9M">03_H3IgPjDl9M</option>';
+            break;
+        case '04':
+            operationElement.innerHTML = '<option value="04_T9Os5pWhqF">04_T9Os5pWhqF</option><option value="04_t8Yq4zXm7K">04_t8Yq4zXm7K</option>';
+            break;
+        case '05':
+            operationElement.innerHTML = '<option value="05_gZP0nWs5Ik">05_gZP0nWs5Ik</option><option value="05_9wX8wY4DlE">05_9wX8wY4DlE</option>';
+            break;
+        case '06':
+            operationElement.innerHTML = '<option value="06_X7ZuJmG0tb">06_X7ZuJmG0tb</option><option value="06_j0YtZ8ZuMr">06_j0YtZ8ZuMr</option>';
+            break;
+        case '07':
+            operationElement.innerHTML = '<option value="07_A5Mw1Vg4Cf">07_A5Mw1Vg4Cf</option><option value="07_nPzQ6tT2fD">07_nPzQ6tT2fD</option>';
+            break;
+        case '08':
+            operationElement.innerHTML = '<option value="08_fKmF7uVwQz">08_fKmF7uVwQz</option><option value="08_mO1h7EgZ8x">08_mO1h7EgZ8x</option>';
+            break;
+        case '09':
+            operationElement.innerHTML = '<option value="09_l7Pw0zE1yX">09_l7Pw0zE1yX</option><option value="09_9wDr8Hq5yL">09_9wDr8Hq5yL</option>';
+            break;
+
+        default:
+            operationElement.innerHTML = ''; // Default case: empty operation dropdown
+            break;
+    }
+}
+</script>
+
+</body>
+</html>

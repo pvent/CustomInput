@@ -1,0 +1,45 @@
+{
+  "DisplayName": "Main",
+  "Tooltip": null,
+  "HelpLink": null,
+  "Color": null,
+  "OriginalIconFileName": null,
+  "Arguments": [
+    {
+      "Name": "in_Language",
+      "DisplayName": "in_Language",
+      "Category": null,
+      "Tooltip": "Two-letter ISO 639 code of the language to be used on Orchestrator Manager's interface. If this argument is not specified, the language is selected based on the system’s locale settings. ",
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "in_ConfigFilePath",
+      "DisplayName": "in_ConfigFilePath",
+      "Category": null,
+      "Tooltip": "Path to the Excel workbook that contains the configuration parameters to be used by Orchestrator Manager.",
+      "Placeholder": "Config.xlsx",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "in_DisableServerCertificateValidation",
+      "DisplayName": "in_DisableServerCertificateValidation",
+      "Category": null,
+      "Tooltip": "Set this to True when needing to access an invalid certificate endoint for a debugging purpose.",
+      "Placeholder": "False",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    }
+  ]
+}
